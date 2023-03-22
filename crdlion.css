@@ -1,22 +1,40 @@
-body {
-    background-color: black;
+* {
+    box-sizing: border-box;
 }
 
-.square {
+body {
+    background-color: rgb(4, 0, 44);
+}
+
+.single-card {
+    transition: .4s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+}
+.front {
+    background-color: greenyellow;
+}
+.wrapper {
+    display:inline-grid; /*다인아 플레스를 써보자ㅂ*/
     width: 500px;
     height: 250px;
     background-color: #f5f5f5;
     margin: 30px 0 0 30px;
     padding: 20px;
-    display:grid;
+    border-radius: 30px;
     grid-template-columns: 200px 300px;
     place-items: center;
 }
 
 img {
     position: relative;
+    
     top: 10px;
     left: 20px;
+    width: 230px
 }
 
 .introduction{
@@ -24,4 +42,12 @@ img {
     font-family: 'Nanum Myeongjo', serif;
     font-weight: bold;
    
+}
+
+.back {
+    transform: rotateY(1800deg);
+}
+
+.flip:hover .single-card{
+    transform: rotateY(1800deg);
 }
